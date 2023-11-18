@@ -15,7 +15,7 @@ new file mode 100644
 index 0000000000..f99385d2af
 --- /dev/null
 +++ b/arch/arm/dts/sun8i-h2-plus-bananapi-p2-zero.dts
-@@ -0,0 +1,273 @@
+@@ -0,0 +1,284 @@
 +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
 +/*
 + * Copyright (C) 2017 Icenowy Zheng <icenowy@aosc.io>
@@ -163,6 +163,17 @@ index 0000000000..f99385d2af
 +	status = "okay";
 +};
 +
++&mmc2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc2_8bit_pins>;
++	vmmc-supply = <&reg_vcc3v3>;
++	vqmmc-supply = <&reg_vcc3v3>;
++	bus-width = <8>;
++	non-removable;
++	cap-mmc-hw-reset;
++	status = "okay";
++};
++
 +&mmc1 {
 +	vmmc-supply = <&reg_vcc3v3>;
 +	vqmmc-supply = <&reg_vcc3v3>;
@@ -294,7 +305,7 @@ new file mode 100644
 index 0000000000..d7e600d2e2
 --- /dev/null
 +++ b/configs/bananapi_p2_zero_defconfig
-@@ -0,0 +1,8 @@
+@@ -0,0 +1,9 @@
 +CONFIG_ARM=y
 +CONFIG_ARCH_SUNXI=y
 +CONFIG_DEFAULT_DEVICE_TREE="sun8i-h2-plus-bananapi-p2-zero"
@@ -303,6 +314,7 @@ index 0000000000..d7e600d2e2
 +CONFIG_DRAM_CLK=408
 +CONFIG_MMC0_CD_PIN=""
 +# CONFIG_SYS_MALLOC_CLEAR_ON_INIT is not set
++CONFIG_MMC_SUNXI_SLOT_EXTRA=2
 -- 
 2.35.1
 
