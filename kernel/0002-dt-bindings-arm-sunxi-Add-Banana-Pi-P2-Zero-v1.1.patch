@@ -1,0 +1,35 @@
+From 08fd0c3c054f0b5f89aaebe99ec295672365c445 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Pavel=20L=C3=B6bl?= <pavel@loebl.cz>
+Date: Sat, 18 Nov 2023 11:12:00 +0100
+Subject: [PATCH 2/3] dt-bindings: arm: sunxi: Add Banana Pi P2 Zero v1.1
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Document binding for Banana Pi P2 Zero v1.1.
+
+Signed-off-by: Pavel Löbl <pavel@loebl.cz>
+---
+ Documentation/devicetree/bindings/arm/sunxi.yaml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/sunxi.yaml b/Documentation/devicetree/bindings/arm/sunxi.yaml
+index 11c5ce941dd7..f3c0511cc133 100644
+--- a/Documentation/devicetree/bindings/arm/sunxi.yaml
++++ b/Documentation/devicetree/bindings/arm/sunxi.yaml
+@@ -141,6 +141,12 @@ properties:
+           - const: sinovoip,bananapi-m64
+           - const: allwinner,sun50i-a64
+ 
++      - description: BananaPi P2 Zero v1.1
++        items:
++          - const: sinovoip,bananapi-p2-zero-v1.1
++          - const: sinovoip,bananapi-p2-zero
++          - const: allwinner,sun8i-h2-plus
++
+       - description: BananaPro
+         items:
+           - const: lemaker,bananapro
+-- 
+2.42.0
+
