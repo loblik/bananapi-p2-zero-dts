@@ -4,6 +4,18 @@ This repository contains BSP patches for Banana PI P2 Zero. Goal is to have boar
 
 ## Armbian
 
+Clone armbian build repository and change to it.
+
+```
+git clone git@github.com:armbian/build.git
+cd build
+```
+Copy in the userpatches directory from this repository.
+
+```
+cp -r ../bananapi-p2-zero-dts/userpatches .
+```
+
 To build the image.
 
 ```
