@@ -21,3 +21,11 @@ To build the image.
 ```
 ./compile.sh BOARD=bananapip2zero BRANCH=curren KERNEL_CONFIGURE=no RELEASE=bookworm BRANCH=current BUILD_ONLY=default BUILD_MINIMAL=yes
 ```
+
+## Development notes
+
+Update SPL on eMMC.
+
+```
+dd obs=1 seek=8192 if=/tmp/sunxi-spl.bin of=/dev/mmcblk2
+```
